@@ -17,7 +17,7 @@ app.controller("DiplomaController", function($scope, $http) {
 
     $scope.receivedData = undefined;
 
-    $scope.result = undefined;
+    $scope.finalResult = undefined;
 
     $scope.checkDiploma = function() {
     	var formdata = new FormData();

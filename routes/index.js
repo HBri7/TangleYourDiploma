@@ -15,7 +15,7 @@ const key = new NodeRSA({b: 2048});
 //console.log(key.exportKey('pkcs8-public'));
 
 key.importKey('-----BEGIN PRIVATE KEY-----\
-MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDWhpwj3nwrY+5q\
+MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDWhpwj3nwrY+5y\
 WxN8XGRTjhmdrvCE7NmX8QsPbS6bHThsKQZJf8pr9f/9UIH4wpIT6PMScTZ+Y/Fk\
 RaCdgkBS+eDVrfLRRCzDMDTHmAWHwstxzy2bnDp/JzKzjeeDrAnFjdf33ygElvLk\
 IsVCTr1cvYv0uB++QRc7Pbd2woob53LBNf2Suj7Gya5MPj1Qwy81w8GaBIssLF+g\
@@ -80,6 +80,7 @@ router.post('/', upload.single('diploma'), function(req, res, next) {
 	fs.readFile(req.file.path, 'utf8', (err, data) => {
 		if (err) throw err;
 		var hash = sha256(data);
+		fs.unlinkSync(req.file.path);
 		res.send(JSON.stringify({hash: hash, filename: req.file.originalname, size: req.file.size}))
 		res.end(200);
 	});
@@ -133,6 +134,8 @@ router.post('/uploadTangle', upload.single('diploma'), function(req, res, next) 
 		if (err) throw err;
 		
 		var hash = sha256(data);
+
+		fs.unlinkSync(req.file.path);
 		
 		var tag = iota.utils.toTrytes(hash);
 		tag = tag.substring(0,27);
@@ -160,11 +163,9 @@ router.post('/uploadTangle', upload.single('diploma'), function(req, res, next) 
 		iota.api.sendTransfer(seed, 4, 14, transfer, function(e, bundle) {
 			if (e) throw e;
 			console.log("Successfully sent your transfer: ", bundle);
+			res.send(JSON.stringify({iota_hash: bundle[0].hash}));
+			res.end(200);
 		})
-		
-		res.send(JSON.stringify({hash: hash, size: req.file.size, tag: tag}))
-		
-		res.end(200);
 	});
 });
 

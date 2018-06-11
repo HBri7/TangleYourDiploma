@@ -41,8 +41,15 @@ html(lang='en')
         p(ng-show ="receivedData")
             | <b>Hash:</b> {{receivedData.hash}}<br />
             | <b>Size:</b> {{receivedData.size}}
-        p(ng-show="result")
-            {{ result.result ? "<b>Valid diploma!</b>" : "<b>Invalid diploma!</b><br /><b>Reason: </b>result.reason" }}
+        p(ng-show = "busy")
+            | Fetching data from Tangle...
+        p(ng-show="finalResult")
+            span(ng-show="finalResult.result == true")
+                b
+                    font(color="green") Valid Diploma!
+            span(ng-show="finalResult.result != true")
+                b
+                    font(color="red") Invalid Diploma!
       hr
       .row-fluid.marketing
         .span6

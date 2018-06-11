@@ -19,7 +19,11 @@ app.controller("DiplomaController", function($scope, $http) {
 
     $scope.finalResult = undefined;
 
+    $scope.busy = false;
+
     $scope.checkDiploma = function() {
+    	$scope.receivedData = undefined;
+    	$scope.finalResult = undefined;
     	var formdata = new FormData();
     	angular.forEach($scope.files,function(file){
         	formdata.append('diploma',file);
@@ -34,24 +38,29 @@ app.controller("DiplomaController", function($scope, $http) {
     }
 
     $scope.uploadDiploma = function() {
+    	$scope.receivedData = undefined;
+    	$scope.finalResult = undefined;
     	var formdata = new FormData();
     	angular.forEach($scope.files,function(file){
         	formdata.append('diploma',file);
         });
+        $scope.busy = true;
         $http.post('/uploadTangle', formdata, {
 			transformRequest: angular.identity,
 			headers: {'Content-Type': undefined}                     
 	    }).success(function(data) {
-	    	$scope.receivedData = data;
-			$scope.checkValidity();
+	    	$scope.busy = false;
+	    	$scope.finalResult = data;
+	    	console.log(data);
 		});
     }
 
     $scope.checkValidity = function(data) {
+    	$scope.busy = true;
     	$http.post('/checkTangle', $scope.receivedData).
 	    success(function(data, status, headers, config) {
-			console.log(data);
-			$scope.result = data;
+	    	$scope.busy = false;
+			$scope.finalResult = data;
 		}).
 		error(function(data, status, headers, config) {
 			console.log(data);

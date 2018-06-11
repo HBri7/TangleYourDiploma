@@ -38,8 +38,10 @@ html(lang='en')
                 .row
                   .form-group
                     a.btn.btn-large.btn-success(ng-click='uploadDiploma()') Upload Diploma!
-        p
-            {{receivedData}}
+        p(ng-show = "busy")
+            | Storing data in Tangle...
+        p(ng-show="finalResult")
+            | {{finalResult.iota_hash}}
       hr
       .row-fluid.marketing
         .span6

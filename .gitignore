@@ -1,5 +1,7 @@
 uploads
+
 .DS_Store
+
 # Logs
 logs
 *.log

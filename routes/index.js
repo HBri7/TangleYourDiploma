@@ -14,35 +14,35 @@ function sha256(data) {
 const key = new NodeRSA({b: 2048});
 // console.log(key.exportKey('pkcs8-private'));
 
-// //PRIVATE KEY MATCH WITH PUBLIC
-// key.importKey('-----BEGIN PRIVATE KEY-----\
-// MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDWhpwj3nwrY+5y\
-// WxN8XGRTjhmdrvCE7NmX8QsPbS6bHThsKQZJf8pr9f/9UIH4wpIT6PMScTZ+Y/Fk\
-// RaCdgkBS+eDVrfLRRCzDMDTHmAWHwstxzy2bnDp/JzKzjeeDrAnFjdf33ygElvLk\
-// IsVCTr1cvYv0uB++QRc7Pbd2woob53LBNf2Suj7Gya5MPj1Qwy81w8GaBIssLF+g\
-// xH4fY5q/MrTmFsJWuOfRc74PEkW5YZ0bjUE9SMZmdBRVAOl60mh3V+gEqhCFcwIE\
-// iSkzDWgHOJeH1/5PBGCR6PZhmi7zrLVlX5HF3OCv4DwRRwWcKgrxFFZ4XvoXxfn6\
-// yzrX/W3RAgMBAAECggEACwwtmE9J17YyvmLgUwQzCnaD7THoIwBLiF6acjXuM4DC\
-// uhc2wqw5EWw+vZ3aw6PJgAr8EZQQ+VtOQBqx1cqyY1OI95gYrBw1reuanDjA+CfY\
-// 8Eh6Ecxu2sN7AfIp3QcMDcdrOtGcLvhTE9qSjAKgD9mXDog44kRZ3OwluZD1KdCe\
-// XfpySk/5XvcbhC27+MDdeAEK+DwUhXdJRYcvYC+oIEBOuHB+26fCMyLNf8FY2ddP\
-// fZyGJrtKoJECvUzC7q+3SuVPL8YT8SsLfnNKmuhzyEE3iYM1F6PtLXTr2oQEBWKo\
-// 1nLN3xeids7gYD/JLpMXcYaVmkgEFkqmYuKO6hgQwQKBgQDsRRSmXjR9LogXs954\
-// UcyvsmCvA8m0NP0B2Mb6qnYj/Gexj2+u3R9ZdNStSerWDWWgtLwpsxyh2ljl/Z2G\
-// XLIjRWcVkQS3Ap0F91C9mgI2q7CgLJPaIxotih01smvouVeXrJTU3LKcn5dq8xVy\
-// 6Ag2Yuci07ILHZn0d8FaacxDmQKBgQDocLDU/F8/XJmxC7nLVJysMyw71EXbUtQi\
-// 7yvKWZ5TpgMlQ3Ib4hOwRoxbl/VAjbUKD5YFd7TzyQrs7vpj/nJX9b6aFmdmdoyC\
-// f9lMQYGe/FZMjwQ6aF4J9y1GTVd/PO+IlsL6DiR1fEWKkPH5/IzHsIkMcCOdHBkB\
-// 1JViKdne+QKBgQDhDPgbdFY4+w6kzS7WmswGezl+23PQlDx++talw6Leqji3N/Jg\
-// tL18vz0phuQKWh54kk88xSA7xziwcgAPENKZqC0FrOm5zOJ24VlmEIGVQ7rtByka\
-// Oh9gS1OBZ19EAO8/SSNHEqWLbLSVKdA/cGcKLvENCmpoDh0scLma/nWT2QKBgQC7\
-// GzONT1YQuCbTuL+nqIWxrEO4KYjOIx+2u1ZBveBQL3uqvF8XiOYWaMPFW05F14xa\
-// ++7kmdbkwvnzfe+7HHDI033Jpa04csdqqSWvV6/S3gdN+3YI2kiQtxMP22RKfS/I\
-// gKuVBFte41lLUKAofp6IhFfd1kskxiBvM8PIUC4caQKBgHR5OOH0wkYn4Y57EMm7\
-// GyXh/0/np4jGr7ejxP9VMq0lLRe3X21CFdZg5tlymB4lYHlu5hYpuTHbExLjx/ds\
-// GOoRZ/dvfmbgHlskRczvS1emYc+cEQmTN0NUNlNS5nMt0THtGdCU6Cg6MZWBfuz6\
-// POVeRKOVqwvL8lJ1PNG7yh0Z\
-// -----END PRIVATE KEY-----', 'pkcs8');
+//PRIVATE KEY MATCH WITH PUBLIC
+key.importKey('-----BEGIN PRIVATE KEY-----\
+MIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQDWhpwj3nwrY+5y\
+WxN8XGRTjhmdrvCE7NmX8QsPbS6bHThsKQZJf8pr9f/9UIH4wpIT6PMScTZ+Y/Fk\
+RaCdgkBS+eDVrfLRRCzDMDTHmAWHwstxzy2bnDp/JzKzjeeDrAnFjdf33ygElvLk\
+IsVCTr1cvYv0uB++QRc7Pbd2woob53LBNf2Suj7Gya5MPj1Qwy81w8GaBIssLF+g\
+xH4fY5q/MrTmFsJWuOfRc74PEkW5YZ0bjUE9SMZmdBRVAOl60mh3V+gEqhCFcwIE\
+iSkzDWgHOJeH1/5PBGCR6PZhmi7zrLVlX5HF3OCv4DwRRwWcKgrxFFZ4XvoXxfn6\
+yzrX/W3RAgMBAAECggEACwwtmE9J17YyvmLgUwQzCnaD7THoIwBLiF6acjXuM4DC\
+uhc2wqw5EWw+vZ3aw6PJgAr8EZQQ+VtOQBqx1cqyY1OI95gYrBw1reuanDjA+CfY\
+8Eh6Ecxu2sN7AfIp3QcMDcdrOtGcLvhTE9qSjAKgD9mXDog44kRZ3OwluZD1KdCe\
+XfpySk/5XvcbhC27+MDdeAEK+DwUhXdJRYcvYC+oIEBOuHB+26fCMyLNf8FY2ddP\
+fZyGJrtKoJECvUzC7q+3SuVPL8YT8SsLfnNKmuhzyEE3iYM1F6PtLXTr2oQEBWKo\
+1nLN3xeids7gYD/JLpMXcYaVmkgEFkqmYuKO6hgQwQKBgQDsRRSmXjR9LogXs954\
+UcyvsmCvA8m0NP0B2Mb6qnYj/Gexj2+u3R9ZdNStSerWDWWgtLwpsxyh2ljl/Z2G\
+XLIjRWcVkQS3Ap0F91C9mgI2q7CgLJPaIxotih01smvouVeXrJTU3LKcn5dq8xVy\
+6Ag2Yuci07ILHZn0d8FaacxDmQKBgQDocLDU/F8/XJmxC7nLVJysMyw71EXbUtQi\
+7yvKWZ5TpgMlQ3Ib4hOwRoxbl/VAjbUKD5YFd7TzyQrs7vpj/nJX9b6aFmdmdoyC\
+f9lMQYGe/FZMjwQ6aF4J9y1GTVd/PO+IlsL6DiR1fEWKkPH5/IzHsIkMcCOdHBkB\
+1JViKdne+QKBgQDhDPgbdFY4+w6kzS7WmswGezl+23PQlDx++talw6Leqji3N/Jg\
+tL18vz0phuQKWh54kk88xSA7xziwcgAPENKZqC0FrOm5zOJ24VlmEIGVQ7rtByka\
+Oh9gS1OBZ19EAO8/SSNHEqWLbLSVKdA/cGcKLvENCmpoDh0scLma/nWT2QKBgQC7\
+GzONT1YQuCbTuL+nqIWxrEO4KYjOIx+2u1ZBveBQL3uqvF8XiOYWaMPFW05F14xa\
+++7kmdbkwvnzfe+7HHDI033Jpa04csdqqSWvV6/S3gdN+3YI2kiQtxMP22RKfS/I\
+gKuVBFte41lLUKAofp6IhFfd1kskxiBvM8PIUC4caQKBgHR5OOH0wkYn4Y57EMm7\
+GyXh/0/np4jGr7ejxP9VMq0lLRe3X21CFdZg5tlymB4lYHlu5hYpuTHbExLjx/ds\
+GOoRZ/dvfmbgHlskRczvS1emYc+cEQmTN0NUNlNS5nMt0THtGdCU6Cg6MZWBfuz6\
+POVeRKOVqwvL8lJ1PNG7yh0Z\
+-----END PRIVATE KEY-----', 'pkcs8');
 
 //WRONG KEY
 // key.importKey('-----BEGIN PRIVATE KEY-----\
@@ -142,11 +142,11 @@ router.post('/checkTangle', function(req, res, next) {
 				console.log("Succes!");
 				var result = key.verify(referenceData, signature, 'utf8', 'base64');
 				console.log(result);
-				res.json({result: result});
+				res.json({result: result, reason: "Signature varification failed!"});
 				res.end();
 			}
 			else {
-				res.json({result: false, reason: "The signature does not match!"});
+				res.json({result: false, reason: "The hash does not match!"});
 				res.end();
 			}
 		}

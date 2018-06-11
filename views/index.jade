@@ -49,7 +49,7 @@ html(lang='en')
                     font(color="green") Valid Diploma!
             span(ng-show="finalResult.result != true")
                 b
-                    font(color="red") Invalid Diploma!
+                    font(color="red") Invalid Diploma!<br>Reason: {{finalResult.reason}}
       hr
       .row-fluid.marketing
         .span6

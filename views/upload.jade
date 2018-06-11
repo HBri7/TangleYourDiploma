@@ -2,7 +2,7 @@ doctype html
 html(lang='en')
   head
     meta(charset='utf-8')
-    title Tangle Your Diploma
+    title Tangle Your Diploma - Upload
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
     meta(name='description', content='')
     meta(name='author', content='')
@@ -18,14 +18,14 @@ html(lang='en')
     .container-narrow
       .masthead
         ul.nav.nav-pills.pull-right
-          li.active
-            a(href='/') Home
           li
+            a(href='/') Home
+          li.active
             a(href='/upload') Upload
         h3.muted Tangle Your Diploma
       hr
       .jumbotron
-        h1 Check a diploma!
+        h1 Upload a diploma!
         p
             form(name="CheckDiploma")
                 .row
@@ -37,12 +37,9 @@ html(lang='en')
                     p
                 .row
                   .form-group
-                    a.btn.btn-large.btn-success(ng-click='checkDiploma()') Check Diploma!
-        p(ng-show ="receivedData")
-            | <b>Hash:</b> {{receivedData.hash}}<br />
-            | <b>Size:</b> {{receivedData.size}}
-        p(ng-show="result")
-            {{ result.result ? "<b>Valid diploma!</b>" : "<b>Invalid diploma!</b><br /><b>Reason: </b>result.reason" }}
+                    a.btn.btn-large.btn-success(ng-click='uploadDiploma()') Upload Diploma!
+        p
+            {{receivedData}}
       hr
       .row-fluid.marketing
         .span6

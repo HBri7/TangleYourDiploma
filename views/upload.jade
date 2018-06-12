@@ -41,7 +41,7 @@ html(lang='en')
         p(ng-show = "busy")
             | Storing data in Tangle...
         p(ng-show="finalResult")
-            | {{finalResult.iota_hash}}
+            | <a href='https://thetangle.org/tag/{{finalResult.iota_tag}}'>{{finalResult.iota_tag}}</a>
       hr
       .row-fluid.marketing
         .span6
@@ -50,7 +50,7 @@ html(lang='en')
             | Your official diploma document is available as a hash in the Tangle. Everybody is able to check the validity!
           h4 Secure
           p
-            | Once you upload your diploma document, we generate a cryptographic of this document and store it in the Tangle. This cannot be changed so stays valid and true!
+            | Once you upload your diploma document, we generate a cryptographic signature of this document and store it in the Tangle. This cannot be changed so stays valid and true!
           h4 Valid
           p Companies and schools can sign your document to prove you actually did the course or study with them.
         .span6

@@ -86,8 +86,8 @@ r+A8EUcFnCoK8RRWeF76F8X5+ss61/1t0QIDAQAB\
 let seed    = 'PLWYXEQISUOXOJCDJ9JBCA9GMPMYBOEPDXRBWVQYXOEDUGSW9AGXTPODSZOJJSAR9GGUMMFXFNQUCWDPK';
  
 let iota = new IOTA({
-    'host': 'https://balancer.iotatoken.nl',
-    'port': 4433
+    'host': 'http://node04.iotatoken.nl',
+    'port': 14265
    
 });
 
@@ -193,7 +193,7 @@ router.post('/uploadTangle', upload.single('diploma'), function(req, res, next) 
 		iota.api.sendTransfer(seed, 4, 14, transfer, function(e, bundle) {
 			if (e) throw e;
 			console.log("Successfully sent your transfer: ", bundle);
-			res.send(JSON.stringify({iota_hash: bundle[0].hash}));
+			res.send(JSON.stringify({iota_hash: bundle[0].hash, iota_tag: bundle[0].tag}));
 			res.end(200);
 		})
 	});
